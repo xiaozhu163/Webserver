@@ -46,7 +46,7 @@ void AsyncLogging::append(const char *logline, int len)
 // 日志线程函数
 void AsyncLogging::threadFunc()
 {
-  assert(running_ == true);         // 断言日志记录在运行
+  assert(running_ == true);         // 日志记录在运行
   latch_.countDown();               // 倒计时锁存器减1
   LogFile output(basename_);        // 创建日志文件输出对象
   BufferPtr newBuffer1(new Buffer); // 创建新的缓冲区
